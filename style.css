@@ -1,0 +1,220 @@
+/* --------------General------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --basic-general-colour: #f9e3ea;
+    --write-ups: black;
+    --bold-font: 'Paytone One', sans-serif;
+    --italics-font: 'Lobster', cursive;
+    --italics-font2: 'Pacifico', cursive;
+    --general-font: 'Poppins', sans-serif;
+
+}
+body {
+    width: 100%;
+    max-width: 1440px;
+   margin-inline: auto;
+    padding: 20px;
+    height: 100vh;
+    background-color: var(--basic-general-colour);
+    overflow: scroll;
+}
+
+/* --------------Company Logo------------------ */
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header img {
+    width: 20%;
+}
+
+/* --------------Navigation------------------ */
+nav > ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--write-ups);
+    margin-top: 1rem;
+}
+nav li {
+    list-style-type: none;
+    padding: .5rem;
+}
+nav a {
+    background-image: linear-gradient(#fddde6, #fddde6);
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    background-position: 100% 10%;
+    text-decoration: none;
+    color: var(--basic-general-colour);
+    padding: .5rem;
+}
+nav a:hover {
+    background-size: 100% 100%;
+    background-position: 0% 100%;
+    transition: background-position .7s, background-size .5s ease-in-out;
+    color: var(--write-ups);
+    padding: .5rem;
+}
+
+/* --------------MAIN CONTENT ----------General------------------ */
+section {
+    display: flex;
+    gap: .2rem;
+    margin-top: .5rem;
+}
+article {
+    flex: 1;
+}
+
+/* -----------------------section 1 with big image------------------ */
+#section-1 {
+    height: 20rem;
+    width: 100%;
+}
+#section-1 article {
+    background-image: url(./images/pexels-ari-roberts-9393229-min.jpg);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+/* -----------------------section 1 transition text------------------ */
+#transition-text {
+    font-family: var(--bold-font);
+    margin: 6vw 1.8vw 0 0;
+}
+#section-1 div:nth-child(1) {
+    margin-top: 3vw;
+    margin-right: -13vw;
+    font-size: 4vw;
+    font-family: var(--bold-font)
+}
+#transition-text span {
+    position: relative;
+    display: inline-block;
+    font-size: 5vw;
+    letter-spacing: .7rem;
+    color: black;
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+}
+@keyframes flip {
+    0%,80% {
+        transform: rotateY(360deg)
+    }
+}
+
+/* -----------------------section 2 with 3 articles------------------ */
+#section-2 article {
+    background-color: var(--basic-general-colour);
+    border-radius: 10px;
+    height: 30rem;
+    padding: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    overflow: hidden;
+}
+#section-2 article:not(:first-child) {
+    margin-left: 10px;
+}
+
+article h2 {
+    text-align: center;
+    font-family: var(--bold-font);
+}
+
+.article-images {
+    width: 100%;
+    height: 200px;
+}
+
+#article-image1 {
+    background-image: url(./images/pexels-the-glorious-studio-10976655-min.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+#article-image2 {
+    background-image: url(./images/pexels-the-glorious-studio-10475789-min.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+#article-image3 {
+    background-image: url(./images/pexels-the-glorious-studio-10976653-min.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+article p {
+    font-family: var(--general-font);
+    font-weight: 400;
+    overflow: hidden;
+
+}
+
+/* -----------------------footer------------------ */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: .2rem;
+    margin: 5px 10px;
+    font-family: var(--general-font);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+footer img{
+    width: 20vw;
+}
+/* ----------------------media query for small devices------------------ */
+@media (max-width:700px) {
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-top: .5rem;
+    }
+    #section-1 div:nth-child(1) {
+        font-size: 6vw;
+
+}
+#transition-text {
+    margin: 6vw 1.8vw 0 0;
+}
+#section-1 div:nth-child(1) {
+    margin-top: 2.9vw;
+    margin-right: -15.5vw;
+    font-size: 4vw;
+}
+#transition-text span {
+    font-size: 6vw;
+}
+footer img{
+    width: 25vw;
+}
+}
+
+@media (min-width:701px) and (max-width:1202px){
+    article p {
+    font-size: 1.2vw;
+    
+    }
+}
